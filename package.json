@@ -8,12 +8,12 @@
     "dev:css": "npm run build:css -- --watch",
     "dev:html": "nodemon --watch ./src -e html --exec \"npm run build:html\"",
     "dev:js": "npm run build:js -- --watch",
-    "serve": "http-server ./dist"
+    "serve": "live-server ./dist --port 8080"
   },
   "devDependencies": {
     "concurrently": "^7.1.0",
     "copyfiles": "^2.4.1",
-    "http-server": "^14.1.0",
+    "live-server": "^1.2.2",
     "nodemon": "^2.0.16",
     "tailwindcss": "^3.0.24",
     "typescript": "^4.6.4"
