@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "build": "npm run build:css && npm run build:html && npm run build:js",
+    "build:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css",
+    "build:html": "copyfiles -u 1 ./src/*.html dist",
+    "build:js": "tsc",
+    "dev": "concurrently \"npm run dev:css\" \"npm run dev:html\" \"npm run dev:js\" \"npm run serve\"",
+    "dev:css": "npm run build:css -- --watch",
+    "dev:html": "nodemon --watch ./src -e html --exec \"npm run build:html\"",
+    "dev:js": "npm run build:js -- --watch",
+    "serve": "http-server ./dist"
+  },
+  "devDependencies": {
+    "concurrently": "^7.1.0",
+    "copyfiles": "^2.4.1",
+    "http-server": "^14.1.0",
+    "nodemon": "^2.0.16",
+    "tailwindcss": "^3.0.24",
+    "typescript": "^4.6.4"
+  }
+}
