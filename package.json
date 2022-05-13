@@ -2,7 +2,7 @@
   "scripts": {
     "build": "npm run build:css && npm run build:html && npm run build:js",
     "build:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css",
-    "build:html": "copyfiles -u 1 ./src/*.html dist",
+    "build:html": "copyfiles -u 1 ./src/*.{html,png,jpg} dist",
     "build:js": "tsc",
     "dev": "concurrently \"npm run dev:css\" \"npm run dev:html\" \"npm run dev:js\" \"npm run serve\"",
     "dev:css": "npm run build:css -- --watch",

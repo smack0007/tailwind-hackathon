@@ -5,8 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="styles.css" rel="stylesheet" />
   </head>
-  <body>
-    <h1 class="text-3xl underline">Hello world!</h1>
+  <body class="antialiased text-slate-500 bg-white">
+    <nav class="text-3xl max-w-8xl p-1 border-b-2 flex flex-row relative">
+      <div><img class="rounded-full" src="conciso.png" /></div>
+      <h1 class="grow text-center">Spirit Animal Profile</h1>
+      <div>
+        <svg
+          id="menu-toggler"
+          class="fill-black"
+          viewBox="0 0 100 80"
+          width="40"
+          height="40"
+        >
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </svg>
+      </div>
+    </nav>
+    <nav
+      id="menu"
+      class="hidden items-center space-x-1 absolute right-0 flex flex-col bg-indigo-500 text-white text-2xl"
+    >
+      <a href="#" class="w-full hover:bg-slate-500 p-2">Home</a>
+      <a href="#" class="w-full hover:bg-slate-500 p-2">News</a>
+      <a href="#" class="w-full hover:bg-slate-500 p-2"
+        >Find your Spirit Animal</a
+      >
+    </nav>
+    <main class="flex justify-center">
+      <div class="w-1/2 flex flex-row bg-slate-100 p-4 m-4 rounded-sm">
+        <img class="rounded-full mr-3 shadow-sm" width="120" src="spirit.png" />
+        <div class="flex flex-col">
+          <h2 class="col-span-2 text-2xl">Zachary Snow</h2>
+          <span>
+            This is my spirit animal. It is my spirit animal because Snow
+            Leopard has the word Snow in it and that is my last name. I like
+            Snow Leopards.
+          </span>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("menu").classList.toggle("hidden");
+      }
+      document.getElementById("menu-toggler").onclick = toggleMenu;
+    </script>
     <script type="module" src="main.js"></script>
   </body>
 </html>
